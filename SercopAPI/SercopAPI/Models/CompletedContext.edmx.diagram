@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3258b95a91724589a3716c469ff179dc" Name="Diagram1">
+        <EntityTypeShape EntityType="ULT_BPMModel.vw_Completed" Width="1.75" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="ULT_BPMModel.vw_InboxProveedores" Width="1.75" PointX="7.125" PointY="0.75" />
+        <EntityTypeShape EntityType="ULT_BPMModel.vw_CompletedProveedores" Width="2.125" PointX="2.5" PointY="0.75" />
+        <EntityTypeShape EntityType="ULT_BPMModel.vw_Inbox" Width="2.125" PointX="4.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

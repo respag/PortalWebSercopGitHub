@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ULT_BPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ULT_BPM.dbo.vw_Completed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_Completed">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="nchar" MaxLength="48" />
+          <Property Name="INCIDENT" Type="int" />
+          <Property Name="STEPID" Type="char" MaxLength="64" />
+          <Property Name="STEPLABEL" Type="nchar" MaxLength="48" />
+          <Property Name="TASKID" Type="char" MaxLength="64" Nullable="false" />
+          <Property Name="TASKUSER" Type="nchar" MaxLength="256" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="Process" Type="varchar" MaxLength="150" />
+          <Property Name="CodigoProceso" Type="varchar" MaxLength="68" />
+          <Property Name="ObjetoContratacion" Type="varchar" MaxLength="30" />
+          <Property Name="Step" Type="varchar" MaxLength="150" />
+          <Property Name="FechaProgramada" Type="datetime" />
+          <Property Name="PROCESSVERSION" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ULT_BPM.dbo.vw_CompletedProveedores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_CompletedProveedores">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="nchar" MaxLength="48" />
+          <Property Name="INCIDENT" Type="int" />
+          <Property Name="STEPID" Type="char" MaxLength="64" />
+          <Property Name="STEPLABEL" Type="nchar" MaxLength="48" />
+          <Property Name="TASKID" Type="char" MaxLength="64" Nullable="false" />
+          <Property Name="TASKUSER" Type="nchar" MaxLength="256" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="Process" Type="varchar" MaxLength="150" />
+          <Property Name="CodigoProceso" Type="varchar" MaxLength="68" />
+          <Property Name="ObjetoContratacion" Type="varchar" MaxLength="30" />
+          <Property Name="Step" Type="varchar" MaxLength="150" />
+          <Property Name="FechaProgramada" Type="datetime" />
+          <Property Name="PROCESSVERSION" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ULT_BPM.dbo.vw_Inbox' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_Inbox">
+          <Key>
+            <PropertyRef Name="TASKID" />
+            <PropertyRef Name="CodigoProceso" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="nchar" MaxLength="48" />
+          <Property Name="INCIDENT" Type="int" />
+          <Property Name="STEPID" Type="char" MaxLength="64" />
+          <Property Name="STEPLABEL" Type="nchar" MaxLength="48" />
+          <Property Name="TASKID" Type="char" MaxLength="64" Nullable="false" />
+          <Property Name="TASKUSER" Type="nchar" MaxLength="256" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="CodigoProceso" Type="varchar" MaxLength="99" Nullable="false" />
+          <Property Name="ObjetoContratacion" Type="varchar" MaxLength="30" />
+          <Property Name="FechaProgramada" Type="datetime" />
+          <Property Name="PROCESSVERSION" Type="int" />
+          <Property Name="ESTADOPROCESO" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ULT_BPM.dbo.vw_InboxProveedores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_InboxProveedores">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="nchar" MaxLength="48" />
+          <Property Name="INCIDENT" Type="int" />
+          <Property Name="STEPID" Type="char" MaxLength="64" />
+          <Property Name="STEPLABEL" Type="nchar" MaxLength="48" />
+          <Property Name="TASKID" Type="char" MaxLength="64" Nullable="false" />
+          <Property Name="TASKUSER" Type="nchar" MaxLength="256" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="Process" Type="varchar" MaxLength="150" />
+          <Property Name="CodigoProceso" Type="varchar" MaxLength="68" />
+          <Property Name="ObjetoContratacion" Type="varchar" MaxLength="30" />
+          <Property Name="Step" Type="varchar" MaxLength="150" />
+          <Property Name="FechaProgramada" Type="datetime" />
+          <Property Name="PROCESSVERSION" Type="int" />
+        </EntityType>
+        <EntityContainer Name="ULT_BPMModelStoreContainer">
+          <EntitySet Name="vw_Completed" EntityType="Self.vw_Completed" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_Completed].[PROCESSNAME] AS [PROCESSNAME], 
+    [vw_Completed].[INCIDENT] AS [INCIDENT], 
+    [vw_Completed].[STEPID] AS [STEPID], 
+    [vw_Completed].[STEPLABEL] AS [STEPLABEL], 
+    [vw_Completed].[TASKID] AS [TASKID], 
+    [vw_Completed].[TASKUSER] AS [TASKUSER], 
+    [vw_Completed].[STATUS] AS [STATUS], 
+    [vw_Completed].[Process] AS [Process], 
+    [vw_Completed].[CodigoProceso] AS [CodigoProceso], 
+    [vw_Completed].[ObjetoContratacion] AS [ObjetoContratacion], 
+    [vw_Completed].[Step] AS [Step], 
+    [vw_Completed].[FechaProgramada] AS [FechaProgramada], 
+    [vw_Completed].[PROCESSVERSION] AS [PROCESSVERSION]
+    FROM [dbo].[vw_Completed] AS [vw_Completed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_CompletedProveedores" EntityType="Self.vw_CompletedProveedores" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_CompletedProveedores].[PROCESSNAME] AS [PROCESSNAME], 
+    [vw_CompletedProveedores].[INCIDENT] AS [INCIDENT], 
+    [vw_CompletedProveedores].[STEPID] AS [STEPID], 
+    [vw_CompletedProveedores].[STEPLABEL] AS [STEPLABEL], 
+    [vw_CompletedProveedores].[TASKID] AS [TASKID], 
+    [vw_CompletedProveedores].[TASKUSER] AS [TASKUSER], 
+    [vw_CompletedProveedores].[STATUS] AS [STATUS], 
+    [vw_CompletedProveedores].[Process] AS [Process], 
+    [vw_CompletedProveedores].[CodigoProceso] AS [CodigoProceso], 
+    [vw_CompletedProveedores].[ObjetoContratacion] AS [ObjetoContratacion], 
+    [vw_CompletedProveedores].[Step] AS [Step], 
+    [vw_CompletedProveedores].[FechaProgramada] AS [FechaProgramada], 
+    [vw_CompletedProveedores].[PROCESSVERSION] AS [PROCESSVERSION]
+    FROM [dbo].[vw_CompletedProveedores] AS [vw_CompletedProveedores]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Inbox" EntityType="Self.vw_Inbox" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_Inbox].[PROCESSNAME] AS [PROCESSNAME], 
+    [vw_Inbox].[INCIDENT] AS [INCIDENT], 
+    [vw_Inbox].[STEPID] AS [STEPID], 
+    [vw_Inbox].[STEPLABEL] AS [STEPLABEL], 
+    [vw_Inbox].[TASKID] AS [TASKID], 
+    [vw_Inbox].[TASKUSER] AS [TASKUSER], 
+    [vw_Inbox].[STATUS] AS [STATUS], 
+    [vw_Inbox].[CodigoProceso] AS [CodigoProceso], 
+    [vw_Inbox].[ObjetoContratacion] AS [ObjetoContratacion], 
+    [vw_Inbox].[FechaProgramada] AS [FechaProgramada], 
+    [vw_Inbox].[PROCESSVERSION] AS [PROCESSVERSION], 
+    [vw_Inbox].[ESTADOPROCESO] AS [ESTADOPROCESO]
+    FROM [dbo].[vw_Inbox] AS [vw_Inbox]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_InboxProveedores" EntityType="Self.vw_InboxProveedores" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_InboxProveedores].[PROCESSNAME] AS [PROCESSNAME], 
+    [vw_InboxProveedores].[INCIDENT] AS [INCIDENT], 
+    [vw_InboxProveedores].[STEPID] AS [STEPID], 
+    [vw_InboxProveedores].[STEPLABEL] AS [STEPLABEL], 
+    [vw_InboxProveedores].[TASKID] AS [TASKID], 
+    [vw_InboxProveedores].[TASKUSER] AS [TASKUSER], 
+    [vw_InboxProveedores].[STATUS] AS [STATUS], 
+    [vw_InboxProveedores].[Process] AS [Process], 
+    [vw_InboxProveedores].[CodigoProceso] AS [CodigoProceso], 
+    [vw_InboxProveedores].[ObjetoContratacion] AS [ObjetoContratacion], 
+    [vw_InboxProveedores].[Step] AS [Step], 
+    [vw_InboxProveedores].[FechaProgramada] AS [FechaProgramada], 
+    [vw_InboxProveedores].[PROCESSVERSION] AS [PROCESSVERSION]
+    FROM [dbo].[vw_InboxProveedores] AS [vw_InboxProveedores]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ULT_BPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ULT_BPMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vw_Completed" EntityType="ULT_BPMModel.vw_Completed" />
+          <EntitySet Name="vw_InboxProveedores" EntityType="ULT_BPMModel.vw_InboxProveedores" />
+          <EntitySet Name="vw_CompletedProveedores" EntityType="ULT_BPMModel.vw_CompletedProveedores" />
+          <EntitySet Name="vw_Inbox" EntityType="ULT_BPMModel.vw_Inbox" />
+        </EntityContainer>
+        <EntityType Name="vw_Completed">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="INCIDENT" Type="Int32" />
+          <Property Name="STEPID" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="STEPLABEL" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="TASKUSER" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="Process" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoProceso" Type="String" MaxLength="68" FixedLength="false" Unicode="false" />
+          <Property Name="ObjetoContratacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Step" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaProgramada" Type="DateTime" Precision="3" />
+          <Property Name="PROCESSVERSION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_InboxProveedores">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="INCIDENT" Type="Int32" />
+          <Property Name="STEPID" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="STEPLABEL" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="TASKUSER" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="Process" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoProceso" Type="String" MaxLength="68" FixedLength="false" Unicode="false" />
+          <Property Name="ObjetoContratacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Step" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaProgramada" Type="DateTime" Precision="3" />
+          <Property Name="PROCESSVERSION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_CompletedProveedores">
+          <Key>
+            <PropertyRef Name="TASKID" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="INCIDENT" Type="Int32" />
+          <Property Name="STEPID" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="STEPLABEL" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="TASKUSER" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="Process" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoProceso" Type="String" MaxLength="68" FixedLength="false" Unicode="false" />
+          <Property Name="ObjetoContratacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Step" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaProgramada" Type="DateTime" Precision="3" />
+          <Property Name="PROCESSVERSION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_Inbox">
+          <Key>
+            <PropertyRef Name="TASKID" />
+            <PropertyRef Name="CodigoProceso" />
+          </Key>
+          <Property Name="PROCESSNAME" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="INCIDENT" Type="Int32" />
+          <Property Name="STEPID" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="STEPLABEL" Type="String" MaxLength="48" FixedLength="true" Unicode="true" />
+          <Property Name="TASKID" Type="String" Nullable="false" MaxLength="64" FixedLength="true" Unicode="false" />
+          <Property Name="TASKUSER" Type="String" MaxLength="256" FixedLength="true" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="CodigoProceso" Type="String" Nullable="false" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="ObjetoContratacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FechaProgramada" Type="DateTime" Precision="3" />
+          <Property Name="PROCESSVERSION" Type="Int32" />
+          <Property Name="ESTADOPROCESO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ULT_BPMModelStoreContainer" CdmEntityContainer="ULT_BPMEntities">
+          <EntitySetMapping Name="vw_Completed">
+            <EntityTypeMapping TypeName="ULT_BPMModel.vw_Completed">
+              <MappingFragment StoreEntitySet="vw_Completed">
+                <ScalarProperty Name="PROCESSVERSION" ColumnName="PROCESSVERSION" />
+                <ScalarProperty Name="FechaProgramada" ColumnName="FechaProgramada" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="ObjetoContratacion" ColumnName="ObjetoContratacion" />
+                <ScalarProperty Name="CodigoProceso" ColumnName="CodigoProceso" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TASKUSER" ColumnName="TASKUSER" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+                <ScalarProperty Name="STEPLABEL" ColumnName="STEPLABEL" />
+                <ScalarProperty Name="STEPID" ColumnName="STEPID" />
+                <ScalarProperty Name="INCIDENT" ColumnName="INCIDENT" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_InboxProveedores">
+            <EntityTypeMapping TypeName="ULT_BPMModel.vw_InboxProveedores">
+              <MappingFragment StoreEntitySet="vw_InboxProveedores">
+                <ScalarProperty Name="PROCESSVERSION" ColumnName="PROCESSVERSION" />
+                <ScalarProperty Name="FechaProgramada" ColumnName="FechaProgramada" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="ObjetoContratacion" ColumnName="ObjetoContratacion" />
+                <ScalarProperty Name="CodigoProceso" ColumnName="CodigoProceso" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TASKUSER" ColumnName="TASKUSER" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+                <ScalarProperty Name="STEPLABEL" ColumnName="STEPLABEL" />
+                <ScalarProperty Name="STEPID" ColumnName="STEPID" />
+                <ScalarProperty Name="INCIDENT" ColumnName="INCIDENT" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_CompletedProveedores">
+            <EntityTypeMapping TypeName="ULT_BPMModel.vw_CompletedProveedores">
+              <MappingFragment StoreEntitySet="vw_CompletedProveedores">
+                <ScalarProperty Name="PROCESSVERSION" ColumnName="PROCESSVERSION" />
+                <ScalarProperty Name="FechaProgramada" ColumnName="FechaProgramada" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="ObjetoContratacion" ColumnName="ObjetoContratacion" />
+                <ScalarProperty Name="CodigoProceso" ColumnName="CodigoProceso" />
+                <ScalarProperty Name="Process" ColumnName="Process" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TASKUSER" ColumnName="TASKUSER" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+                <ScalarProperty Name="STEPLABEL" ColumnName="STEPLABEL" />
+                <ScalarProperty Name="STEPID" ColumnName="STEPID" />
+                <ScalarProperty Name="INCIDENT" ColumnName="INCIDENT" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Inbox">
+            <EntityTypeMapping TypeName="ULT_BPMModel.vw_Inbox">
+              <MappingFragment StoreEntitySet="vw_Inbox">
+                <ScalarProperty Name="ESTADOPROCESO" ColumnName="ESTADOPROCESO" />
+                <ScalarProperty Name="PROCESSVERSION" ColumnName="PROCESSVERSION" />
+                <ScalarProperty Name="FechaProgramada" ColumnName="FechaProgramada" />
+                <ScalarProperty Name="ObjetoContratacion" ColumnName="ObjetoContratacion" />
+                <ScalarProperty Name="CodigoProceso" ColumnName="CodigoProceso" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TASKUSER" ColumnName="TASKUSER" />
+                <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+                <ScalarProperty Name="STEPLABEL" ColumnName="STEPLABEL" />
+                <ScalarProperty Name="STEPID" ColumnName="STEPID" />
+                <ScalarProperty Name="INCIDENT" ColumnName="INCIDENT" />
+                <ScalarProperty Name="PROCESSNAME" ColumnName="PROCESSNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
